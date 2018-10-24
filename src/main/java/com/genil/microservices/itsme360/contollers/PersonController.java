@@ -16,7 +16,7 @@ import java.util.List;
  **/
 
 @RestController
-@RequestMapping("/api/v1/persons")
+@RequestMapping("/server/api/v1/persons")
 public class PersonController {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 

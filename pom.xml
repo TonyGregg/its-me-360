@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.genil.microservices</groupId>
-	<artifactId>its-me-360</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<artifactId>its-me-360-ext</artifactId>
+	<version>0.0</version>
+	<packaging>war</packaging>
 
-	<name>its-me-360</name>
-	<description>Demo project for Spring Boot</description>
+	<name>its-me-360-ext</name>
+	<description>Demo project for Spring Boot and Angular 6</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -41,16 +41,34 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
 	<build>
+		<finalName>${artifactId}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<archive>
+						<manifest>
+							<addDefaultImplementationEntries>false</addDefaultImplementationEntries>
+						</manifest>
+					</archive>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
