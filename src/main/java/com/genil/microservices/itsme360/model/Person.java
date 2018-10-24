@@ -21,6 +21,22 @@ public class Person {
     @OneToMany(mappedBy = "person")
     private List<Phone> phones;
 
+    public List<Phone> getPhones() {
+        return phones;
+    }
+
+    public void setPhones(List<Phone> phones) {
+        this.phones = phones;
+    }
+
+    public List<ToDo> getToDos() {
+        return toDos;
+    }
+
+    public void setToDos(List<ToDo> toDos) {
+        this.toDos = toDos;
+    }
+
     @OneToMany(mappedBy = "person")
     private List<ToDo> toDos;
 

@@ -58,6 +58,17 @@ public class ToDo {
         return createdOn;
     }
 
+    @Override
+    public String toString() {
+        return "ToDo{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", taskStatus=" + taskStatus +
+                ", createdOn=" + createdOn +
+                ", completedOn=" + completedOn +
+                '}';
+    }
+
     public void setCreatedOn(LocalDateTime createdOn) {
         this.createdOn = createdOn;
     }
